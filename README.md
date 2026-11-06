@@ -1,48 +1,41 @@
-# --FLAPPY BIRD--
+# Flappy Bird
 
-Python Project
+**An Arcade Game in Python with Pygame**
 
---PROBLEM STATEMENT--
+## Overview
 
-Flappy Bird is an arcade-style game in which the player controls the bird, which moves persistently to the right, trying to fly between the pipes(obstacles).
+A remake of Flappy Bird. The bird moves forward on its own, and the player taps **Space** to flap and fly through the gaps between pipes. The game covers the basics of 2D game programming: a game loop, gravity, sprite animation, collision detection, scoring and sound.
 
--to provide a simple GUI based application that implements the logic of collision detection using pygame.
+## Repository layout
 
--to provide functions involving to draw and move objects/obstacles, to detect collision, render visuals and calculate score.
+| Path | Content |
+| --- | --- |
+| `main.py` | The whole game |
+| `resources/images/` | Background, floor, pipe, three bird frames and the start screen |
+| `resources/sounds/` | Flap, hit, point, die and swoosh sound effects |
+| `resources/fonts/` | The 04B_19 pixel font |
 
+## How to run
 
---REQUIREMENTS--
+1. Install Python 3.9 or later and Pygame: `pip install pygame`
+2. From the repository folder, run `python main.py`
 
--IDE/VS Code
+On macOS or Linux, file names are case-sensitive: rename `resources/fonts/04B_19.TTF` to `04B_19.ttf`, or change the two font paths in `main.py` to match.
 
--Python
+## Controls
 
--Python pygame library
+| Key | Action |
+| --- | --- |
+| Space | Flap; after a game over, start again |
+| Esc | Quit |
 
--Python sys library
+## How it works
 
--Python random library
-
-
---SOLUTION--
-
--the game is created using the pygame library.
-
--the GUI is entirely handled by the predefined functions of the pygame library.
-
--the logic of the game is taken care of by some basic python functions.
-
--functions involve drawing of objects and obstacles on the screen, detection for collision and calculating the score.
-
-
---SYSTEM REQUIREMENTS--
-
--Windows 10/11
-
--Python 3.9.1
-
--IDE/VS Code
-
--1024x576p display
-
--2GB memory
+| Part | Content |
+| --- | --- |
+| Window | 480 × 640 pixels at 60 frames per second |
+| Physics | Gravity adds 0.25 to the bird's speed every frame; a flap sets it to −10 |
+| Pipes | A new pair every 1.2 seconds at one of 5 heights, with a 300-pixel gap, moving left 5 pixels per frame |
+| Animation | The bird cycles through 3 wing frames every 200 ms and tilts with its speed |
+| Collision | The game ends if the bird hits a pipe, the floor or flies too high |
+| Score | Rises with time survived; the high score is kept until you quit |
